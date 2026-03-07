@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ML Algorithms — SVM & Random Forest</title>
+  <link rel="stylesheet" href="static/index.css" />
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- BG Effects -->
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+
+  <div class="wrapper">
+
+    <!-- NAVIGATION -->
+    <nav>
+      <div class="nav-logo">ML<span>.</span>ATLAS</div>
+      <ul class="nav-links">
+        <li><a href="#algorithms">Algorithms</a></li>
+        <li><a href="#compare">Compare</a></li>
+        <li><a href="#usecases">Use Cases</a></li>
+        <li><a href="#visualize">Visualize</a></li>
+      </ul>
+      <div class="nav-badge">v2.0 · 2024</div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-visual">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+
+      <p class="hero-eyebrow">// Machine Learning · Supervised Classification</p>
+
+      <h1 class="hero-title">
+        <span class="highlight-svm">SVM</span>
+        <span class="line-2"> vs </span>
+        <span class="highlight-rf">Forest</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Two paradigms. One battlefield. Explore the mathematics, mechanics, and mastery behind Support Vector Machines and Random Forests — the algorithms that power modern intelligence.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#algorithms" class="btn btn-primary">Explore Algorithms</a>
+        <a href="#compare" class="btn btn-outline">Side-by-Side Compare</a>
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num">97%</div>
+        <div class="stat-label">SVM Peak Accuracy</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Trees in Forest</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1995</div>
+        <div class="stat-label">SVM Origin Year</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2001</div>
+        <div class="stat-label">R.Forest Origin</div>
+      </div>
+    </div>
+
+    <!-- ALGORITHM CARDS -->
+    <section id="algorithms">
+      <div class="algorithms">
+
+        <!-- SVM -->
+        <div class="algo-card svm">
+          <div class="algo-number">01</div>
+
+          <span class="algo-tag">Classification · Regression</span>
+          <h2 class="algo-title">SVM</h2>
+          <p class="algo-full-name">// Support Vector Machine</p>
+
+          <p class="algo-desc">
+            A supervised learning algorithm that constructs an optimal hyperplane in a high-dimensional feature space to maximally separate data classes. The kernel trick enables transformation into non-linear decision boundaries without explicit computation.
+          </p>
+
+          <ul class="feature-list">
+            <li>Finds the maximum-margin hyperplane that separates classes with the widest possible gap between support vectors.</li>
+            <li>Kernel functions (RBF, Polynomial, Sigmoid) map data to higher dimensions for non-linear classification.</li>
+            <li>Regularization parameter C controls the trade-off between margin width and classification error.</li>
+            <li>Highly effective in high-dimensional spaces, even when dimensions exceed sample count.</li>
+            <li>Memory-efficient: decision function uses only a subset of training points (support vectors).</li>
+          </ul>
+
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-val">O(n²)</div>
+              <div class="metric-key">Training</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">O(sv)</div>
+              <div class="metric-key">Prediction</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">High</div>
+              <div class="metric-key">Accuracy</div>
+            </div>
+          </div>
+
+          <div class="algo-footer">
+            <a href="#compare" class="algo-link">Compare SVM →</a>
+          </div>
+        </div>
+
+        <!-- RANDOM FOREST -->
+        <div class="algo-card rf">
+          <div class="algo-number">02</div>
+
+          <span class="algo-tag">Ensemble · Bagging</span>
+          <h2 class="algo-title">R.FOREST</h2>
+          <p class="algo-full-name">// Random Forest Classifier</p>
+
+          <p class="algo-desc">
+            An ensemble method that builds multiple decision trees during training and outputs the mode of their predictions. By combining weak learners with bootstrap aggregation and random feature selection, it achieves remarkable robustness and accuracy.
+          </p>
+
+          <ul class="feature-list">
+            <li>Bootstrap aggregation (bagging) trains each tree on a random subset of data with replacement to reduce variance.</li>
+            <li>Random feature selection at each split decorrelates trees, making the ensemble stronger than any single model.</li>
+            <li>Naturally resistant to overfitting — more trees generally improve generalization without variance increase.</li>
+            <li>Built-in feature importance scores quantify each predictor's contribution to the model's decisions.</li>
+            <li>Handles missing values gracefully and scales to very large datasets with parallel training.</li>
+          </ul>
+
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-val">O(nt)</div>
+              <div class="metric-key">Training</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">O(t)</div>
+              <div class="metric-key">Prediction</div>
+            </div>
+            <div class="metric">
+              <div class="metric-val">V.High</div>
+              <div class="metric-key">Accuracy</div>
+            </div>
+          </div>
+
+          <div class="algo-footer">
+            <a href="#compare" class="algo-link">Compare Forest →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section id="compare" class="complexity-section reveal">
+      <p class="section-label">Side-by-side</p>
+      <h2 class="section-heading">Deep <span style="color:var(--accent-svm)">Com</span><span style="color:var(--accent-rf)">pare</span></h2>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th class="svm-col">Support Vector Machine</th>
+            <th class="rf-col">Random Forest</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Core Idea</td>
+            <td>Maximum-margin hyperplane separation</td>
+            <td>Ensemble of decorrelated decision trees</td>
+          </tr>
+          <tr>
+            <td>Training Complexity</td>
+            <td><span class="badge badge-caution">O(n² · p) to O(n³)</span></td>
+            <td><span class="badge badge-good">O(n · t · p · log n)</span></td>
+          </tr>
+          <tr>
+            <td>Prediction Speed</td>
+            <td><span class="badge badge-good">Fast (sparse SVs)</span></td>
+            <td><span class="badge badge-mid">Moderate (t trees)</span></td>
+          </tr>
+          <tr>
+            <td>Interpretability</td>
+            <td><span class="badge badge-caution">Low (black box)</span></td>
+            <td><span class="badge badge-mid">Moderate (feature importance)</span></td>
+          </tr>
+          <tr>
+            <td>High-Dim Data</td>
+            <td><span class="badge badge-good">Excellent</span></td>
+            <td><span class="badge badge-mid">Good</span></td>
+          </tr>
+          <tr>
+            <td>Large Datasets</td>
+            <td><span class="badge badge-caution">Slow to train</span></td>
+            <td><span class="badge badge-good">Scales well</span></td>
+          </tr>
+          <tr>
+            <td>Noise Tolerance</td>
+            <td><span class="badge badge-mid">Moderate (C param)</span></td>
+            <td><span class="badge badge-good">High (averaging)</span></td>
+          </tr>
+          <tr>
+            <td>Overfitting Risk</td>
+            <td><span class="badge badge-mid">Medium (kernel/C)</span></td>
+            <td><span class="badge badge-good">Low (ensemble)</span></td>
+          </tr>
+          <tr>
+            <td>Feature Scaling</td>
+            <td><span class="badge badge-caution">Required</span></td>
+            <td><span class="badge badge-good">Not required</span></td>
+          </tr>
+          <tr>
+            <td>Multiclass Support</td>
+            <td><span class="badge badge-mid">OvO / OvR strategies</span></td>
+            <td><span class="badge badge-good">Native multiclass</span></td>
+          </tr>
+          <tr>
+            <td>Memory Usage</td>
+            <td><span class="badge badge-good">Low (support vectors)</span></td>
+            <td><span class="badge badge-caution">High (n trees)</span></td>
+          </tr>
+          <tr>
+            <td>Hyperparameters</td>
+            <td>C, kernel, γ, degree</td>
+            <td>n_estimators, max_depth, max_features</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- USE CASES -->
+    <section id="usecases" class="use-cases reveal">
+      <p class="section-label">Real-world applications</p>
+      <h2 class="section-heading">Where They <span style="color:var(--accent-svm)">Shine</span></h2>
+
+      <div class="use-case-grid">
+        <div class="use-case-item svm-item">
+          <span class="uc-icon">🧬</span>
+          <div class="uc-type">SVM</div>
+          <div class="uc-title">Bioinformatics & Gene Classification</div>
+          <div class="uc-desc">Classifying cancer types from gene expression microarrays — high-dimensional, small-sample settings where SVM excels over other methods.</div>
+        </div>
+        <div class="use-case-item svm-item">
+          <span class="uc-icon">📝</span>
+          <div class="uc-type">SVM</div>
+          <div class="uc-title">Text Categorization & NLP</div>
+          <div class="uc-desc">Spam detection and sentiment analysis — SVMs with linear kernels dominate sparse TF-IDF feature spaces with high precision.</div>
+        </div>
+        <div class="use-case-item rf-item">
+          <span class="uc-icon">💳</span>
+          <div class="uc-type">Random Forest</div>
+          <div class="uc-title">Fraud Detection Systems</div>
+          <div class="uc-desc">Transaction fraud identification across millions of records. Random Forest handles class imbalance and heterogeneous features naturally.</div>
+        </div>
+        <div class="use-case-item rf-item">
+          <span class="uc-icon">🏥</span>
+          <div class="uc-type">Random Forest</div>
+          <div class="uc-title">Medical Diagnostics</div>
+          <div class="uc-desc">Disease risk prediction from patient records. Feature importance gives clinicians interpretable insights alongside accurate predictions.</div>
+        </div>
+        <div class="use-case-item svm-item">
+          <span class="uc-icon">🖼️</span>
+          <div class="uc-type">SVM</div>
+          <div class="uc-title">Image Recognition</div>
+          <div class="uc-desc">Handwritten digit recognition (MNIST), face detection with HOG features — SVM with RBF kernel achieves near-human accuracy on clean datasets.</div>
+        </div>
+        <div class="use-case-item svm-item">
+          <span class="uc-icon">📡</span>
+          <div class="uc-type">SVM</div>
+          <div class="uc-title">Signal Classification</div>
+          <div class="uc-desc">EEG brain signal classification for brain-computer interfaces. SVM's margin maximization minimizes noise sensitivity in noisy physiological data.</div>
+        </div>
+        <div class="use-case-item rf-item">
+          <span class="uc-icon">🌿</span>
+          <div class="uc-type">Random Forest</div>
+          <div class="uc-title">Remote Sensing & Land Use</div>
+          <div class="uc-desc">Satellite imagery classification for land cover mapping. Handles multi-spectral bands and missing data robustly at geographic scale.</div>
+        </div>
+        <div class="use-case-item rf-item">
+          <span class="uc-icon">📈</span>
+          <div class="uc-type">Random Forest</div>
+          <div class="uc-title">Stock Market Prediction</div>
+          <div class="uc-desc">Predicting price movements using technical indicators and macroeconomic features. Out-of-bag error provides built-in validation without holdout sets.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISUALIZER -->
+    <section id="visualize" class="viz-section reveal">
+      <div>
+        <p class="section-label">Interactive</p>
+        <h2 class="section-heading" style="margin-bottom:24px">Decision<br><span style="color:var(--accent-svm)">Boundary</span></h2>
+        <p style="color:var(--text-secondary); font-size:0.9rem; line-height:1.8; margin-bottom:24px; font-weight:300;">
+          The SVM hyperplane (cyan line) maximizes the margin between two classes. Support vectors — the critical training points closest to the boundary — define the decision function. The shaded zone represents the margin region.
+        </p>
+        <p style="color:var(--text-muted); font-family: var(--font-mono); font-size:0.65rem; letter-spacing:2px; margin-bottom:8px;">
+          KERNEL: RBF · C: 1.0 · γ: auto
+        </p>
+      </div>
+
+      <div>
+        <div class="viz-canvas">
+          <div class="viz-canvas-title">// SVM · Hyperplane Visualization</div>
+          <canvas id="svmCanvas" width="500" height="380"></canvas>
+        </div>
+
+        <div class="viz-canvas" style="margin-top:2px;">
+          <div class="viz-canvas-title">// Random Forest · Decision Boundary</div>
+          <canvas id="rfCanvas" width="500" height="200"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-brand">ML · ATLAS</div>
+      <div class="footer-note">SVM vs Random Forest · Educational Reference · 2024</div>
+    </footer>
+
+  </div><!-- end wrapper -->
+
+  <script>
+    // ====== CUSTOM CURSOR ======
+    const cursor = document.getElementById('cursor');
+    const follower = document.getElementById('cursorFollower');
+    let mx = 0, my = 0, fx = 0, fy = 0;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      cursor.style.left = mx - 6 + 'px';
+      cursor.style.top  = my - 6 + 'px';
+    });
+
+    (function animFollower() {
+      fx += (mx - fx) * 0.12;
+      fy += (my - fy) * 0.12;
+      follower.style.left = fx - 18 + 'px';
+      follower.style.top  = fy - 18 + 'px';
+      requestAnimationFrame(animFollower);
+    })();
+
+    // ====== SCROLL REVEAL ======
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => obs.observe(el));
+
+    // ====== SVM CANVAS ======
+    (function drawSVM() {
+      const canvas = document.getElementById('svmCanvas');
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width, H = canvas.height;
+
+      ctx.fillStyle = '#04060f';
+      ctx.fillRect(0, 0, W, H);
+
+      // Grid
+      ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+      ctx.lineWidth = 1;
+      for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+      for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+
+      // Margin zone
+      const grad = ctx.createLinearGradient(0, 0, W, H);
+      grad.addColorStop(0,   'rgba(0,245,212,0.04)');
+      grad.addColorStop(0.5, 'rgba(0,245,212,0.0)');
+      grad.addColorStop(1,   'rgba(255,107,53,0.04)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+
+      // Hyperplane
+      ctx.strokeStyle = '#00f5d4';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([]);
+      ctx.beginPath(); ctx.moveTo(80, H-40); ctx.lineTo(W-80, 40); ctx.stroke();
+
+      // Margin lines
+      ctx.strokeStyle = 'rgba(0,245,212,0.35)';
+      ctx.lineWidth = 1;
+      ctx.setLineDash([8, 6]);
+      ctx.beginPath(); ctx.moveTo(40,  H-40); ctx.lineTo(W-100, 40); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(120, H-40); ctx.lineTo(W-60,  40); ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Class A points (cyan)
+      const classA = [[100,300],[130,280],[90,260],[160,310],[80,330],[110,250],[70,290]];
+      classA.forEach(([x,y]) => {
+        ctx.beginPath();
+        ctx.arc(x, y, 6, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(0,245,212,0.9)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(0,245,212,0.3)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      });
+
+      // Class B points (orange)
+      const classB = [[380,100],[410,80],[360,60],[430,110],[370,130],[400,55],[440,90]];
+      classB.forEach(([x,y]) => {
+        ctx.beginPath();
+        ctx.arc(x, y, 6, 0, Math.PI*2);
+        ctx.fillStyle = 'rgba(255,107,53,0.9)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(255,107,53,0.3)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      });
+
+      // Support vectors (ringed)
+      [[145,280],[95,260],[370,118]].forEach(([x,y]) => {
+        ctx.beginPath();
+        ctx.arc(x, y, 12, 0, Math.PI*2);
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      });
+
+      // Labels
+      ctx.fillStyle = '#00f5d4';
+      ctx.font = '700 11px Space Mono, monospace';
+      ctx.fillText('HYPERPLANE', W/2 - 80, H/2 + 14);
+
+      ctx.fillStyle = 'rgba(255,255,255,0.3)';
+      ctx.font = '10px Space Mono, monospace';
+      ctx.fillText('MARGIN', W/2 - 60, H/2 - 24);
+      ctx.fillText('Class A ●', 30, H - 14);
+      ctx.fillStyle = 'rgba(255,107,53,0.8)';
+      ctx.fillText('Class B ●', W - 110, 20);
+      ctx.fillStyle = 'rgba(255,255,255,0.3)';
+      ctx.fillText('○ Support Vector', W/2 - 55, H - 14);
+    })();
+
+    // ====== RANDOM FOREST CANVAS ======
+    (function drawForest() {
+      const canvas = document.getElementById('rfCanvas');
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width, H = canvas.height;
+
+      ctx.fillStyle = '#04060f';
+      ctx.fillRect(0, 0, W, H);
+
+      // Draw trees as simple decision-tree icons
+      const treeCount = 6;
+      const spacing = W / treeCount;
+      const accuracy = [0.88, 0.84, 0.91, 0.87, 0.93, 0.89];
+      const colors   = ['#00f5d4','#ff6b35','#7b61ff','#00f5d4','#ff6b35','#7b61ff'];
+
+      for (let i = 0; i < treeCount; i++) {
+        const cx = spacing * i + spacing / 2;
+        const alpha = accuracy[i];
+        const col = colors[i];
+
+        // Bar
+        const bh = H * 0.55 * alpha;
+        const grad = ctx.createLinearGradient(cx, H - bh - 20, cx, H - 20);
+        grad.addColorStop(0, col);
+        grad.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(cx - 14, H - bh - 20, 28, bh);
+
+        // Top dot
+        ctx.beginPath();
+        ctx.arc(cx, H - bh - 20, 5, 0, Math.PI * 2);
+        ctx.fillStyle = col;
+        ctx.fill();
+
+        // Label
+        ctx.fillStyle = 'rgba(255,255,255,0.4)';
+        ctx.font = '9px Space Mono, monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText(`T${i+1}`, cx, H - 6);
+        ctx.fillStyle = col;
+        ctx.fillText(`${Math.round(alpha*100)}%`, cx, H - bh - 28);
+      }
+
+      // Ensemble arrow
+      ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(10, H*0.12);
+      ctx.lineTo(W-10, H*0.12);
+      ctx.stroke();
+
+      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.font = '9px Space Mono, monospace';
+      ctx.textAlign = 'left';
+      ctx.fillText('VOTE → MAJORITY CLASS', 12, H*0.12 - 6);
+      ctx.textAlign = 'right';
+      ctx.fillStyle = '#00f5d4';
+      ctx.fillText('Ensemble Acc: 93.5%', W-12, H*0.12 - 6);
+    })();
+  </script>
+
+</body>
+</html>
